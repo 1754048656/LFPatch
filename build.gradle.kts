@@ -27,7 +27,7 @@ val commitCount = run {
     Git(repo).log().add(refId).call().count()
 }
 
-val (coreCommitCount, coreLatestTag) = FileRepositoryBuilder().setGitDir(rootProject.file(".git/modules/core"))
+val (coreCommitCount, coreLatestTag) = FileRepositoryBuilder().setGitDir(rootProject.file(".git/modules/f-core"))
     .runCatching {
         build().use { repo ->
             val git = Git(repo)
@@ -63,7 +63,7 @@ tasks.register<Delete>("clean") {
 
 listOf("Debug", "Release").forEach { variant ->
     tasks.register("build$variant") {
-        description = "Build LSPatch with $variant"
+        description = "Build LFPatch with $variant"
         dependsOn(projects.jar.dependencyProject.tasks["build$variant"])
         dependsOn(projects.manager.dependencyProject.tasks["build$variant"])
     }
@@ -101,8 +101,8 @@ fun Project.configureBaseExtension() {
 
             externalNativeBuild {
                 cmake {
-                    arguments += "-DEXTERNAL_ROOT=${File(rootDir.absolutePath, "core/external")}"
-                    arguments += "-DCORE_ROOT=${File(rootDir.absolutePath, "core/core/src/main/jni")}"
+                    arguments += "-DEXTERNAL_ROOT=${File(rootDir.absolutePath, "f-core/external")}"
+                    arguments += "-DCORE_ROOT=${File(rootDir.absolutePath, "f-core/core/src/main/jni")}"
                     abiFilters("arm64-v8a", "armeabi-v7a", "x86", "x86_64")
                     val flags = arrayOf(
                         "-Wall",
