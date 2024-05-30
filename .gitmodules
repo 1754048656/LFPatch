@@ -2,10 +2,14 @@
 	path = apksigner
 	url = https://android.googlesource.com/platform/tools/apksig.git
 	branch = android10-release
-[submodule "f-core"]
-	path = f-core
-	url = https://github.com/1754048656/LFPosed.git
+[submodule "core"]
+	path = core
+	url = https://github.com/LSPosed/LSPosed.git
 	branch = master
 [submodule "patch/libs/manifest-editor"]
 	path = patch/libs/manifest-editor
 	url = https://github.com/WindySha/ManifestEditor.git
+[submodule "f-core"]
+	path = f-core
+	url = https://github.com/1754048656/LFPosed.git
+    branch = master
