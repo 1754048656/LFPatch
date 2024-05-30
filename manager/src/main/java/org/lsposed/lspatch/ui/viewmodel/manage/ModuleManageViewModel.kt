@@ -22,8 +22,8 @@ class ModuleManageViewModel : ViewModel() {
         LSPPackageManager.appList.mapNotNull { appInfo ->
             val metaData = appInfo.app.metaData ?: return@mapNotNull null
             appInfo to XposedInfo(
-                metaData.getInt("xposedminversion", -1).also { if (it == -1) return@mapNotNull null },
-                metaData.getString("xposeddescription") ?: "",
+                metaData.getInt("fposedminversion", -1).also { if (it == -1) return@mapNotNull null },
+                metaData.getString("fposeddescription") ?: "",
                 emptyList() // TODO: scope
             )
         }.also {

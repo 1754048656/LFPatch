@@ -89,13 +89,13 @@ jobs:
     - name: Upload Debug artifact
       uses: actions/upload-artifact@v3
       with:
-        name: lspatch-debug
+        name: lfpatch-debug
         path: out/debug/*
 
     - name: Upload Release artifact
       uses: actions/upload-artifact@v3
       with:
-        name: lspatch-release
+        name: lfpatch-release
         path: out/release/*
 
     - name: Upload mappings

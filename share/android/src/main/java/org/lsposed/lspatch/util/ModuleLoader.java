@@ -60,7 +60,7 @@ public class ModuleLoader {
         var moduleLibraryNames = new ArrayList<String>(1);
         try (var apkFile = new ZipFile(path)) {
             readDexes(apkFile, preLoadedDexes);
-            readName(apkFile, "assets/xposed_init", moduleClassNames);
+            readName(apkFile, "assets/fposed_init", moduleClassNames);
             readName(apkFile, "assets/native_init", moduleLibraryNames);
         } catch (IOException e) {
             Log.e(TAG, "Can not open " + path, e);

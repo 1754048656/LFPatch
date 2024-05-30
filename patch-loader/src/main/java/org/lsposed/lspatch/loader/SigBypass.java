@@ -25,9 +25,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.zip.ZipFile;
 
-import de.robv.android.xposed.XC_MethodHook;
-import de.robv.android.xposed.XposedBridge;
-import de.robv.android.xposed.XposedHelpers;
+import de.robv.android.fposed.FC_MethodHook;
+import de.robv.android.fposed.FposedBridge;
+import de.robv.android.fposed.FposedHelpers;
 
 public class SigBypass {
 
@@ -70,7 +70,7 @@ public class SigBypass {
     }
 
     private static void hookPackageParser(Context context) {
-        XposedBridge.hookAllMethods(PackageParser.class, "generatePackageInfo", new XC_MethodHook() {
+        FposedBridge.hookAllMethods(PackageParser.class, "generatePackageInfo", new FC_MethodHook() {
             @Override
             protected void afterHookedMethod(MethodHookParam param) {
                 var packageInfo = (PackageInfo) param.getResult();
@@ -95,16 +95,16 @@ public class SigBypass {
                 return originalCreator.newArray(size);
             }
         };
-        XposedHelpers.setStaticObjectField(PackageInfo.class, "CREATOR", proxiedCreator);
+        FposedHelpers.setStaticObjectField(PackageInfo.class, "CREATOR", proxiedCreator);
         try {
-            Map<?, ?> mCreators = (Map<?, ?>) XposedHelpers.getStaticObjectField(Parcel.class, "mCreators");
+            Map<?, ?> mCreators = (Map<?, ?>) FposedHelpers.getStaticObjectField(Parcel.class, "mCreators");
             mCreators.clear();
         } catch (NoSuchFieldError ignore) {
         } catch (Throwable e) {
             Log.w(TAG, "fail to clear Parcel.mCreators", e);
         }
         try {
-            Map<?, ?> sPairedCreators = (Map<?, ?>) XposedHelpers.getStaticObjectField(Parcel.class, "sPairedCreators");
+            Map<?, ?> sPairedCreators = (Map<?, ?>) FposedHelpers.getStaticObjectField(Parcel.class, "sPairedCreators");
             sPairedCreators.clear();
         } catch (NoSuchFieldError ignore) {
         } catch (Throwable e) {

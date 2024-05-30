@@ -18,7 +18,7 @@ import android.widget.Toast;
 
 import org.lsposed.lspatch.share.Constants;
 import org.lsposed.lspd.models.Module;
-import org.lsposed.lspd.service.ILSPApplicationService;
+import org.lsposed.lspd.service.ILFPApplicationService;
 
 import java.io.File;
 import java.lang.reflect.InvocationTargetException;
@@ -29,12 +29,12 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
-public class RemoteApplicationService implements ILSPApplicationService {
+public class RemoteApplicationService implements ILFPApplicationService {
 
     private static final String TAG = "LSPatch";
     private static final String MODULE_SERVICE = Constants.MANAGER_PACKAGE_NAME + ".manager.ModuleService";
 
-    private volatile ILSPApplicationService service;
+    private volatile ILFPApplicationService service;
 
     @SuppressLint("DiscouragedPrivateApi")
     public RemoteApplicationService(Context context) throws RemoteException {

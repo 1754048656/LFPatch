@@ -44,7 +44,7 @@ namespace lspd {
 
     private:
         inline static std::map<std::string, std::string> obfuscation_map_ = {
-                {"de.robv.android.xposed.", "de.robv.android.xposed."},
+                {"de.robv.android.fposed.", "de.robv.android.fposed."},
                 { "android.app.AndroidApp", "android.app.AndroidApp"},
                 { "android.content.res.XRes", "android.content.res.XRes"},
                 { "android.content.res.XModule", "android.content.res.XModule"},

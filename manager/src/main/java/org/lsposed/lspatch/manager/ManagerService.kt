@@ -9,9 +9,9 @@ import kotlinx.coroutines.runBlocking
 import org.lsposed.lspatch.config.ConfigManager
 import org.lsposed.lspatch.lspApp
 import org.lsposed.lspd.models.Module
-import org.lsposed.lspd.service.ILSPApplicationService
+import org.lsposed.lspd.service.ILFPApplicationService
 
-object ManagerService : ILSPApplicationService.Stub() {
+object ManagerService : ILFPApplicationService.Stub() {
 
     private const val TAG = "ManagerService"
 

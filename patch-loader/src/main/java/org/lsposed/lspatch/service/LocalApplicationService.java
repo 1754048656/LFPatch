@@ -11,7 +11,7 @@ import org.lsposed.lspatch.loader.util.FileUtils;
 import org.lsposed.lspatch.share.Constants;
 import org.lsposed.lspatch.util.ModuleLoader;
 import org.lsposed.lspd.models.Module;
-import org.lsposed.lspd.service.ILSPApplicationService;
+import org.lsposed.lspd.service.ILFPApplicationService;
 
 import java.io.File;
 import java.io.IOException;
@@ -21,7 +21,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.zip.ZipFile;
 
-public class LocalApplicationService extends ILSPApplicationService.Stub {
+public class LocalApplicationService extends ILFPApplicationService.Stub {
 
     private static final String TAG = "LSPatch";
 

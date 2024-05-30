@@ -36,14 +36,14 @@ import kotlin.coroutines.suspendCoroutine
 object LSPPackageManager {
 
     private const val TAG = "LSPPackageManager"
-    private const val SETTINGS_CATEGORY = "de.robv.android.xposed.category.MODULE_SETTINGS"
+    private const val SETTINGS_CATEGORY = "de.robv.android.fposed.category.MODULE_SETTINGS"
 
     const val STATUS_USER_CANCELLED = -2
 
     @Parcelize
     class AppInfo(val app: ApplicationInfo, val label: String) : Parcelable {
         val isXposedModule: Boolean
-            get() = app.metaData?.get("xposedminversion") != null
+            get() = app.metaData?.get("fposedminversion") != null
     }
 
     var appList by mutableStateOf(listOf<AppInfo>())
