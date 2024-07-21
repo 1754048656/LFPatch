@@ -1,10 +1,10 @@
-# LSPatch Framework
+# LFPatch Framework
 
 [![Build](https://img.shields.io/github/actions/workflow/status/LSPosed/LSPatch/main.yml?branch=master&logo=github&label=Build&event=push)](https://github.com/LSPosed/LSPatch/actions/workflows/main.yml?query=event%3Apush+is%3Acompleted+branch%3Amaster) [![Crowdin](https://img.shields.io/badge/Localization-Crowdin-blueviolet?logo=Crowdin)](https://lsposed.crowdin.com/lspatch) [![Download](https://img.shields.io/github/v/release/LSPosed/LSPatch?color=orange&logoColor=orange&label=Download&logo=DocuSign)](https://github.com/LSPosed/LSPatch/releases/latest) [![Total](https://shields.io/github/downloads/LSPosed/LSPatch/total?logo=Bookmeter&label=Counts&logoColor=yellow&color=yellow)](https://github.com/LSPosed/LSPatch/releases)
 
 ## Introduction 
 
-Rootless implementation of LSPosed framework, integrating Xposed API by inserting dex and so into the target APK.
+Rootless implementation of LFPosed framework, integrating Xposed API by inserting dex and so into the target APK.
 
 ## Supported Versions
 
@@ -39,4 +39,4 @@ You can contribute translation [here](https://lsposed.crowdin.com/lspatch).
 
 ## License
 
-LSPatch is licensed under the **GNU General Public License v3 (GPL-3)** (http://www.gnu.org/copyleft/gpl.html).
+LFPatch is licensed under the **GNU General Public License v3 (GPL-3)** (http://www.gnu.org/copyleft/gpl.html).
